@@ -1,0 +1,75 @@
+.grid{
+    
+    &__header{
+        font-size: .9rem;
+        place-items: center;
+        margin-bottom: 1rem;
+        padding: .5rem;
+
+        div{
+            align-self: center;
+        }
+        
+    }
+    
+    &__row{
+        height: 3rem;
+        margin-bottom: .5rem;
+        
+        &__res{
+            overflow: hidden;
+            
+            &__name{
+                font-size: .9rem;
+            }
+            
+            &__spec{
+                font-size: .7rem;
+                font-style: italic;
+            }
+            
+            &__name, &__spec{
+                margin: 0rem .5rem;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &__carte{
+            background-color: #BCBCBC;
+            color: $white;
+            width: 80%;
+            height: 80%;
+            place-self: center;
+            border-radius: .4rem;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+            
+            &__valid:hover{
+                cursor: pointer;
+            }
+
+            &__titre{
+                font-size: .8rem;
+            }
+            
+            &__etat{
+                font-size: .6rem;
+            }
+            
+            &__titre, &__etat{
+                text-align: center;
+            }
+        }
+        
+    }
+
+    &__header, &__row{
+        display: grid;
+        gap: .5rem;
+        grid-template-columns: repeat(6, 1fr);
+        background-color: $white;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        border-radius: .3rem;
+    }
+}

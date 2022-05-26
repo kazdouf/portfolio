@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../dist/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet" />
+    <script src="../app/script/lib/jquery.js"></script>
+    <script src="../app/script/lib/printThis.js"></script>
+    <script src="../app/script/lib/chart.js"></script>
+    <title>Formateur</title>
+</head>
+
+<body onload="formateurHome()">
+    <div class="slide-bar flex flex-dc">
+        <div class="flex flex-ai-c" onclick="javascript:formateurHome()">Gestion des Absences</div>
+        <div class="link" onclick="javascript:formateurHome()">Accueil</div>
+        <div class="link" onclick="javascript:Absence()">Absences</div>
+        <div class="link" onclick="javascript:Etudiants()">Stagiaires</div>
+        <div class="link" onclick="javascript:Messagerie()">Messagerie</div>
+        <div class="link" onclick="javascript:Imprimer()">Imprimer</div>
+    </div>
+    <header class="header">
+        <nav class="flex flex-ai-c">
+            <div class="menu-btn flex flex-jc-c flex-ai-c">
+                <div class="menu-btn__burger"></div>
+            </div>
+            <div id="messages" class="nav-link" title="messages"></div>
+            <div id="notifications" class="nav-link" title="notifications"></div>
+            <div id="profile" class="nav-link flex" title="profile">
+                <div id="navLinkPic" class="nav-link__img"></div>
+                <div class="nav-link__user flex flex-dc flex-jc-c">
+                    <div id="username" class="nav-link__user__name"></div>
+                    <div id="title" class="nav-link__user__titre"></div>
+                </div>
+                <img src="../img/assets/arrow-down.svg" alt="arrow" />
+            </div>
+        </nav>
+    </header>
+
+    <div id="detailsProfile" class="dropdown-menu flex flex-dc flex-jc-c" title="profile details">
+        <div class="dropdown-menu__infos flex flex-dc flex-jc-c">
+            <div id="username" class="nav-link__user__dropname"></div>
+            <div id="title" class="nav-link__user__droptitre"></div>
+        </div>
+        <div class="dropdown-menu__controls flex flex-dc flex-jc-c">
+            <input id="profileSettings" class="dropdown-menu__controls__profile" type="button" value="Profile">
+            <input id="deconnection" class="dropdown-menu__controls__deconnect" type="button" value="Se Déconnecter">
+        </div>
+    </div>
+
+    <div id="newMessages" class="dropdown-menu-messages hide-scrollbar flex flex-dc"></div>
+
+    <div id="newNotifications" class="dropdown-menu-notifications hide-scrollbar flex flex-dc"></div>
+
+    <div id="infoMessageBox" class="overlay" hidden>
+        <div class="info-message-box">
+            <div  id="title" class="info-message-box__title"></div>
+            <div id="msg" class="info-message-box__message hide-scrollbar"></div>
+            <div class="info-message-box__btns flex">
+                <input class="info-message-box__btn" type="button" value="OK">
+            </div>
+        </div>
+    </div>
+
+    <section class="content" id="content">
+
+
+    </section>
+    
+    <script defer type="text/javascript" src="../app/script/app.js"></script>
+    <script defer type="text/javascript" src="../app/script/formateur/formateur.js"></script>
+
+</body>
+
+</html>

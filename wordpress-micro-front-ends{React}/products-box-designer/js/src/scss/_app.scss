@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+:root {
+  --bg-color: hsl(0, 0%, 100%);
+  --card-bg: hsl(0, 0%, 95%);
+  --txt-color: hsl(244, 19%, 14%);
+  --head-color: hsl(0, 0%, 13%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#wdmp_products-box-designer_root {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  padding: .2rem 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  margin: 1rem;
+
+  .product-box-designer {
+
+    display: flex;
+    gap: 2rem;
+    margin-inline: 1.5rem 1rem;
+    align-items: center;
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      width: fit-content;
+      margin-block: 20px 5px;
+      color: var(--txt-color);
+    }
+
+    input[type=text], select {
+      width: 15rem;
+      border: none;
+      border-radius: 5px;
+      padding: 08px;
+      background-color: var(--card-bg);
+    }
+    
+    &__right-col, &__left-col {
+      width: 100%;
+    }
+
+  }
+
+  .wd-box-designer {
+
+    &__title{
+      margin-inline: 1.5rem;
+    }
+
+    &__card-field {
+
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 600;
+      margin: .3rem;
+      padding: .5rem;
+      background-color: var(--card-bg);
+      border-radius: .5rem;
+    
+      &::before {
+        content: "\2637";
+        cursor: pointer;
+        font-size: 1.5rem;
+        vertical-align: middle;
+        margin: 0 1rem 0 .2rem;
+      }
+    
+    }
+
+    &__btn-div {
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      &__button {
+        cursor: pointer;
+        padding: 8px 10px;
+        color: var(--bg-color);
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(90deg, rgba(58,40,127,1) 0%, rgba(114,37,157,1) 35%, rgba(189,33,196,1) 100%);
+      }
+    }
+
+    &__remove {
+      cursor: pointer;
+      vertical-align: middle;
+      float: right;
+    }
+
+  }
+}

@@ -1,0 +1,663 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: $lighterGray;
+    min-width: 24.5rem;
+    min-height: 100vh;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.header{
+
+    position: fixen;
+    overflow: hidden;
+    height: 10vh;
+    background-color: $lighterGray;
+    box-shadow: 0px 0px 10px 2px $lightgray;
+    z-index: 2;
+
+    nav{
+        
+        justify-content: flex-end;
+        height: 100%;
+        background-color: #ebebeb;
+
+        .nav-link{
+            @include breakpoint-down(medium){
+                height: 50%;
+                width: 2.5rem;
+                margin: 0rem .2rem;
+            }
+        }
+
+        .nav-link:nth-child(2){
+            background-size: 1.9rem;
+            background-image: url('../img/assets/message-icon.svg');
+
+            @include breakpoint-down(medium){
+                background-size: 1.5rem;
+                background-image: url('../img/assets/message-icon-light.svg');
+            }
+        }
+
+        .nav-link:nth-child(3){
+            background-size: 1.5rem;
+            background-image: url('../img/assets/notification-icon.svg');
+
+            @include breakpoint-down(medium){
+                background-size: 1.2rem;
+                background-image: url('../img/assets/notification-icon-light.svg');
+            }
+        }
+
+        .nav-link:nth-child(4){
+            width: fit-content;
+            margin-right: 1.5rem;
+            img {
+                align-self: flex-start;
+                margin: .2rem .5rem 0rem .2rem;
+
+                @include breakpoint-down(medium){
+                    display: none;
+                }
+            }
+        }
+
+        .nav-link.active{
+            background-color: $white;
+            padding: .5rem;
+        }
+
+        .nav-link:nth-child(2).active{
+            background-image: url('../img/assets/message-icon.svg');
+        }
+
+        .nav-link:nth-child(3).active{
+            background-image: url('../img/assets/notification-icon.svg');
+        }
+        
+        @include breakpoint-down(medium){
+            background-color: $darkBlue;
+        }
+    }
+
+    .menu-btn {
+        position: fixed;
+        left: 1rem;
+        width: 2rem;
+        height: 8vh;
+        cursor: pointer;
+        transition: all 300ms ease-in-out;
+
+        @include breakpoint-up(medium){
+            display: none;
+        }
+    }
+
+    .menu-btn__burger {
+        width: 2rem;
+        height: .2rem;
+        background: $white;
+        border-radius: 1rem;
+        box-shadow: 0 2px 5px $lightgray;
+        transition: all 300ms ease-in-out;
+    }
+
+    .menu-btn__burger::before,
+    .menu-btn__burger::after {
+        content: '';
+        position: absolute;
+        width: 2rem;
+        height: .2rem;
+        background: $white;
+        border-radius: 1rem;
+        transition: all 300ms ease-in-out;
+    }
+
+    .menu-btn__burger::before {
+        transform: translateY(-.8rem);
+    }
+
+    .menu-btn__burger::after {
+        transform: translateY(.8rem);
+    }
+    
+    .menu-btn.open .menu-btn__burger {
+        transform: translateX(-3.125rem);
+        background: transparent;
+        box-shadow: none;
+    }
+    
+    .menu-btn.open .menu-btn__burger::before {
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+    .menu-btn.open .menu-btn__burger::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+    }
+
+    .menu-btn.open {
+        left: 40%;
+    }
+
+    @include breakpoint-down(medium){
+        height: 8vh;
+    }
+}
+
+.nav-link{
+    margin: 0rem 0.2rem;
+    background-color: $white;
+    padding: .3rem .1rem;
+    border: 1px solid $lightgray;
+    border-radius: .9375rem;
+    width: 3.1rem;
+    height: 6vh;
+    cursor: pointer;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__user {
+
+        width: fit-content;
+        
+        &__name::-webkit-scrollbar, &__titre::-webkit-scrollbar{
+            display: none;
+        }
+
+        &__name, &__titre, &__dropname, &__droptitre{
+            width: 90%;
+            overflow-x: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &__name, &__titre{
+            @include breakpoint-down(medium){
+                display: none;
+            }
+        }
+
+        &__name,  &__dropname{
+            color: $darkGray;
+            font-size: .8rem;
+        }
+    
+        &__titre, &__droptitre{
+            color: $lightgray;
+            font-size: .7rem;
+            font-style: italic;
+        }
+    }
+    
+    &__img{
+        //background-image: url('../img/assets/profile.jpg');
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 1.7rem;
+        height: 1.7rem;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0rem .5rem 0rem .2rem;
+    }
+
+    @include breakpoint-down(medium){
+        background-color: $darkBlue;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.slide-bar{
+    position: fixed;
+    width: 18%;
+    min-width: 9.5rem;
+    height: 100vh;
+    font-size: .9rem;
+    overflow-x: hidden;
+    color: $white;
+    background-color: $darkBlue;
+    z-index: 50;
+
+    .link, :nth-child(1){
+        color: $white;
+        background-color: $darkBlue;
+        background-repeat: no-repeat;
+        background-position: 1rem;
+        background-size: 1.5rem;
+        padding: 1.3rem .2rem 1.3rem 3.5rem;
+        width: 100%;
+    }
+
+    .active, .link:hover{
+        cursor: pointer;
+        background-color: $lightBlue;
+        //color: $green;
+        animation: fade-in 300ms ease-in-out forwards;
+    }
+
+    :nth-child(1):hover{
+        cursor: pointer;
+    }
+
+    :nth-child(1){
+        background-image: url(../img/assets/logo-light.svg);
+        font-size: .8rem;
+        height: 10vh;
+        padding: 0rem 0rem 0rem 3.5rem;
+    }
+
+    :nth-child(2){
+        background-image: url(../img/assets/home-icon.svg);
+    }
+
+    :nth-child(3){
+        background-image: url(../img/assets/absences-icon.svg);
+    }
+
+    :nth-child(4){
+        background-image: url(../img/assets/etudiants-icon.svg);
+    }
+
+    :nth-child(5){
+        background-image: url(../img/assets/messagerie-icon.svg);
+    }
+
+    :nth-child(6){
+        background-image: url(../img/assets/imprimer-icon.svg);
+    }
+
+    :nth-child(7){
+        background-image: url(../img/assets/notes-icon.svg);
+    }
+
+    :nth-child(8){
+        background-image: url(../img/assets/param-icon.svg);
+    }
+
+    @include breakpoint-down(medium){
+        left: -50%;
+        width: 30%;
+        height: 100vh;
+        background-color: $darkBlue;//transparentize($darkBlue, .5) ;
+    }
+
+}
+
+.container{
+    height: 75vh;
+    width: 100%;
+  
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: transparent;
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  
+    @include breakpoint-down(medium){
+      grid-template-columns: 1fr;
+    }
+}
+
+.dropdown-menu{
+
+    position: fixed;
+    top: 8.5vh;
+    border-radius: .3rem;
+    background-color: $white;
+    box-shadow: 0px 2px 6px 2px $lightgray;
+    z-index: 20;
+    
+    &__infos{
+        padding: .8rem .6rem;
+        border-bottom: .06rem solid $lightgray;
+    }
+
+    &__controls{
+
+        padding: .8rem .6rem;
+
+        &__profile, &__deconnect{
+            background-color: transparent;
+            color: $darkGray;
+            border: none;
+            text-align: left;
+            padding: .3rem 1.5rem;
+            
+            background-repeat: no-repeat;
+            background-position: 0rem;
+            background-size: .8rem;
+        }
+        
+        &__profile:hover, &__deconnect:hover{
+            cursor: pointer;
+        }
+
+        &__profile{
+            background-image: url(../img/assets/user-settings-icon.svg);
+        }
+
+        &__deconnect{
+            background-image: url(../img/assets/user-logout-icon.svg);
+        }
+    }
+
+    @include breakpoint-down(medium){
+        height: fit-content;
+        width: 100%;
+    }
+
+    @include breakpoint-up(medium){
+        right: 1.5rem;
+        width: fit-content;
+    }
+    
+}
+
+
+.dropdown-menu-notifications{
+
+    &__notif:hover{
+        background-color: transparentize($darkBlue, .9);
+        cursor: pointer;
+    }
+
+    &__notif{
+        border-bottom: .066rem solid $lightgray;
+        padding: .2rem .5rem;
+        
+        &__row{
+
+            width: 100%;
+            height: 3rem;
+             &__action{
+                font-size: .8rem;
+                line-height: 1rem;
+                height: 2rem;
+                max-height: 2rem;
+             }
+             &__passedtime{
+                font-size: .7rem;
+                font-weight: 100;
+                font-style: italic;
+            }
+
+            &__passedtime, &__action {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }   
+        }
+    }
+
+    @include breakpoint-up(medium){
+        right: 12.5rem;
+    }
+}
+
+.dropdown-menu-messages, .dropdown-menu-notifications{
+    position: fixed;
+    color: $darkGray;
+    
+    top: 8.5vh;
+    
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+
+    border-radius: .3rem;
+    background-color: $white;
+    box-shadow: 0px 2px 6px 2px $lightgray;
+    z-index: 20;
+
+    @include breakpoint-down(medium){
+        max-height: 90vh;
+        width: 100%;
+    }
+
+    @include breakpoint-up(medium){
+        right: 12.5rem;
+        width: 12rem;
+        max-height: 50vh;
+    }
+}
+
+.new{
+    background-color: transparentize($darkBlue, .85);
+}
+
+.dropdown-menu-messages{
+
+    &__message:hover{
+        background-color: transparentize($darkBlue, .9);
+        cursor: pointer;
+    }
+
+    &__message{
+        border-bottom: .066rem solid $lightgray;
+        padding: .2rem;
+
+        &__img{
+            background-image: url(../img/personnelProfiles/defaultProfile.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 50%;
+            margin: 0rem .5rem;
+        }
+
+        &__row{
+            width: 70%;
+
+            &__name, &__msg{
+                width: 100%;
+                overflow-x: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            &__name{
+                font-size: .9rem;
+            }
+            
+            &__msg{
+                font-size: .8rem;
+            }
+
+            &__date{
+                font-size: .6rem;
+                font-weight: 100;
+                font-style: italic;
+            }
+        }
+    }
+    
+    @include breakpoint-up(medium){
+        right: 16rem;
+    }
+}
+
+.dropdown-menu-messages::-webkit-scrollbar,
+.dropdown-menu-notifications::-webkit-scrollbar{
+    display: none;
+}
+
+.notifNumber{
+    position: relative;
+    height: 1rem;
+    width: 1rem;
+    font-size: .8rem; //.5
+    line-height: .8; //1
+    color: $white;
+    background-color: $green;
+    top: -.6rem;
+    left: 2.2rem;
+    margin: 0;
+    padding: .2rem;
+    border-radius: 50%;
+    text-align: center;
+
+    @include breakpoint-down(medium){
+        top: 0rem;
+        left: 1.2rem;
+    }
+}
+
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: transparentize($darkGray, .7);
+    z-index: 30;
+}
+
+.info-message-box{
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    max-height: 30vh;
+    overflow: hidden;
+    padding: .6rem;
+    background-color: $white;
+    border: 0.065rem solid transparentize($darkGray, .5);
+    border-radius: .5rem;
+    z-index: 40;
+
+    &__title{
+        font-weight: 600;
+        color: $red;
+        margin-bottom: .5rem;
+    }
+
+    &__message::-webkit-scrollbar{
+        display: none;
+    }
+    
+    &__message{
+        max-height: 15vh;
+        font-size: .8rem;
+        overflow-y: scroll;
+        text-overflow: ellipsis;
+    }
+
+    &__btns{
+        justify-content: flex-end;
+    }
+
+    &__btn:hover{
+        cursor: pointer;
+        background-color: $darkBlue;
+    }
+    &__btn{
+        font-size: .9rem;
+        margin-top: .5rem;
+        padding: 0rem 2rem;
+        border: .06rem solid $darkGray;
+        border-radius: .5rem;
+        color: $white;
+        background-color: transparentize($darkBlue, .33);
+    }
+
+    @include breakpoint-down(medium){
+        width: 90%;
+    }
+}
+
+//FlexBox
+.flex{
+    display: flex;
+
+    &-dc{
+        flex-direction: column;
+    }
+    
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-jc-fe{
+        justify-content: flex-end;
+    }
+
+    &-jc-c{
+        justify-content: center;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+.hide-scrollbar{
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.err{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    font-size: 2rem;
+    text-align: center;
+    color: $lighterGray;
+    background-color: transparentize($red, .3);
+    padding: 2rem;
+    border-radius: 1.25rem;
+    transform: translate(-50%, -50%);
+
+    &__revAcc:hover{
+        cursor: pointer;
+        color: $green;
+    }
+
+    &__revAcc{
+        font-size: 1.5rem;
+        width: fit-content;
+        margin: auto;
+    }
+}

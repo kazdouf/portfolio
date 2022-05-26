@@ -1,0 +1,164 @@
+.profile-container{
+    
+    width: 100%;
+    padding: 3rem 4rem;
+    margin-top: 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 5fr 2fr;
+    grid-template-areas: "photo entryes" "photobtn formbtn";
+    
+    background-color: $white;
+    border: .065rem solid transparentize($darkGray, .5);
+    border-radius: .5rem;
+
+    @include breakpoint-down(medium){
+        padding: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr .2fr 1.2fr .2fr;
+        grid-template-areas: "photo" "photobtn" "entryes" "formbtn";
+        background-color: $darkBlue;
+        border-top-left-radius: 3rem;
+        border-top-right-radius: 3rem;
+        margin-top: 0;
+    }
+
+    &__content__title{
+        @include breakpoint-down(medium){
+            display: none;
+        }
+    }
+
+    &__photo{
+        grid-area: photo;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+        object-fit: cover;
+        place-self: center;
+        box-shadow: 0px 4px 9px 1px $lightgray;
+    }
+
+    &__photobtn:hover, &__formbtn:hover{
+        cursor: pointer;
+        background-color: transparentize($darkBlue, .33);
+    }
+
+    &__formbtn, &__photobtn{
+        font-size: .9rem;
+        padding: .3rem 1rem;
+        border: .06rem solid $darkGray;
+        border-radius: .5rem;
+        color: $white;
+        background-color: $darkBlue;
+        place-self: center;
+    }
+
+    &__photobtn{
+        grid-area: photobtn;
+    }
+
+    &__formbtn-container{
+        height: 100%;
+        background-color: $white;
+    }
+
+    &__formbtn{
+        grid-area: formbtn;
+        width: 100%;
+        min-width: fit-content;
+
+        @include breakpoint-down(medium){
+            width: 80%;
+        }
+    }
+
+    &__form{
+
+        grid-area: entryes;
+
+        @include breakpoint-down(medium){
+            background-color: $white;
+            padding: 1rem 3rem;
+            border-top-left-radius: 3rem;
+            border-top-right-radius: 3rem;
+        }
+
+        &__row{
+
+            position: relative;
+            &__input, &__label{
+                margin: .5rem;
+            }
+
+            &__input{
+                border: .06rem solid $darkGray;
+                border-radius: .5rem;
+                padding: .2rem .4rem;
+                color: $darkGray;
+                background-color: $lighterGray;
+                width: 8rem;
+            }
+
+            &__eye-icon:hover{
+                cursor: pointer;
+            }
+
+            &__eye-icon{
+                position: absolute;
+                //background-image: url(../img/assets/eye-hidden-icon.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                width: 1rem;
+                height: 1rem;
+                right: 1rem;
+            }
+
+        }
+
+    }
+}
+
+.update-message-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 17Vh;
+    min-height: 17vh;
+    width: 35%;
+    min-width: fit-content;
+    padding: 1.5rem;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    border-radius: .625rem;
+    
+
+    &__title{
+        margin-bottom: 4vh;
+        min-width: max-content;
+    }
+
+    &__btn{
+        width: 45%;
+        padding: .3rem 1rem;
+        color: $darkGray;
+        border: .065rem solid $darkGray;
+        border-radius: .4rem;
+    }
+
+    &__btn:hover{
+        cursor: pointer;
+    }
+
+    &__btn:first-child{
+        background-color: #ebebebeb;
+        color: $darkBlue;
+    }
+
+    &__btn:last-child{
+        background-color: transparentize($darkBlue, .33);
+        color: $white;
+    }
+}

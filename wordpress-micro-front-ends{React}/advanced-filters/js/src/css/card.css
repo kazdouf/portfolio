@@ -1,0 +1,68 @@
+/***          card styles         ***/
+.metaxonomy__card {
+    display: grid;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-bottom: .5rem;
+    padding: 0;
+    -webkit-box-shadow: 0px 10px 20px 0px var(--card-bg); 
+    box-shadow: 0px 10px 20px 0px var(--card-bg);
+}
+
+.metaxonomy__card.open {
+    padding: .6rem;
+}
+
+.metaxonomy__card__head{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: .5rem;
+    border-radius: 10px;
+    background-color: var(--card-bg);
+    transition: background-color .3s ease;
+}
+
+.metaxonomy__card__head.open{
+    background-color: var(--head-color) !important;
+}
+
+.metaxonomy__card__head:hover {
+    cursor: pointer;
+}
+
+.dashicons-arrow-right-alt2 {
+    color: var(--head-color);
+    margin: 0 5px;
+}
+
+.dashicons-arrow-down-alt2 {
+    color: var(--card-bg);
+}
+
+.metaxonomy__card__type {
+    margin: 0 20px 0 10px;
+    color: var(--bg-color);
+    background-color: black;
+    
+    border-radius: 1rem;
+    padding: 7px 10px;
+    transition: background-color .3s ease;
+}
+.metaxonomy__card__type.open {
+    color: var(--head-color);
+    background-color: var(--bg-color);
+}
+
+
+.metaxonomy__card__name {
+    visibility: visible;
+    margin-right: .7rem;
+}
+.metaxonomy__card__name.open {
+    visibility: hidden;
+}
+
+.metaxonomy__card__remove{
+    margin-left: auto;
+}

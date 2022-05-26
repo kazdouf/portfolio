@@ -1,0 +1,271 @@
+.content {
+    position: absolute;
+    top: 10vh;
+    left: 18%;
+    width: 82%;
+    height: 90vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 1rem 3rem;
+    color: $darkGray;
+    font-size: 0.9rem;
+
+
+    &__title {
+        margin: 0.5rem 0rem 1rem 0rem;
+        width: fit-content;
+        font-family: "Segoe UI";
+        font-size: 1rem;
+        font-weight: 400;
+        border-bottom: 2px solid $lightgray;
+        box-shadow: 0px 1px 0px 0px $lightgray;
+        white-space: nowrap;
+    }
+
+    &__groupe{
+        background-image: url(../img/assets/arrow-down.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: .7rem .7rem;
+        font-size: 1rem;
+        margin: 1rem .5rem;
+        padding-left: 1.2rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    &__groupe.arrow{
+        background-image: url(../img/assets/arrow-front.svg);
+    }
+
+    &__groupe:hover {
+        cursor: pointer;
+    }
+
+    &__groupe::after {
+        position: relative;
+        left: .7rem;
+        width: 95%;
+        height: .7px;
+        content: '\a0';
+        background-color: $lightgray;
+    }
+    
+    &__table {
+        display: grid;
+        width: 100%;
+
+        &__head{
+
+            @include breakpoint-down(medium){
+                display: none;
+            }
+        }
+        
+        &__aucune{
+            background-color: $white;
+            padding: .5rem;
+            border-radius: .652rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        &__row{
+            cursor: pointer;
+        }
+
+        &__row, &__head{
+            background-color: $white;
+            padding: .5rem;
+            border-radius: .652rem;
+            width: 100%;
+
+            &__infos{
+                width: 100%;
+                display: grid;
+                gap:1rem;
+                
+                @include breakpoint-down(medium){
+                    padding: .5rem;
+                    gap: .2rem;
+                    grid-template-columns: 2fr 1fr;
+                    grid-template-rows: repeat(3, 1fr);
+                    grid-template-areas: "infos just"
+                                         "infos just"
+                                         "infos just";
+                    
+
+                    :nth-child(3), :nth-child(4){
+                        font-size: .9rem;
+                        color: $lightgray;
+                    }
+    
+                    :first-child{
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                    }
+    
+                    :nth-child(3){
+                        font-style: italic;
+                    }
+                }
+
+                @include breakpoint-up(medium){
+                    grid-template-columns: repeat(3, 1fr) .5fr;
+                }
+
+            }
+
+            &__column{
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            @include breakpoint-down(medium){
+                line-height: 1;
+                margin: .3rem 0rem;
+                box-shadow: 2px 2px 8px 2px $lightgray;
+            }
+        }
+            
+        .content__table__row:nth-child(odd){
+            background-color: transparentize($white, .5)
+        }
+
+   
+    }
+
+    @include breakpoint-down(medium){
+        padding: 1rem 1rem;
+    }
+}
+
+.header, .content{
+    @include breakpoint-down(medium){
+        width: 100%;
+        left: 0;
+    }
+}
+
+.just{
+    
+    border: 1px solid #0ba571;
+    color: #0ba571;
+
+    @include breakpoint-down(medium){
+        color: $white;
+        background-color: #0ba571;
+    }
+}
+
+.just, .njust{
+    width: 100%;
+    text-align: center;
+    border-radius: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint-down(medium){
+        grid-area: just;
+        color: $white;
+        background-color: #0ba571;
+        
+    }
+}
+
+.njust{
+    border: 1px solid #f92c55;
+    color: #f92c55;
+
+    @include breakpoint-down(medium){
+        color: $white;
+        background-color: #f92c55;
+    }
+}
+
+.spacing{
+    margin-bottom: 2.5rem;
+}
+
+.import-docs-list{
+
+    display: grid;
+    gap: .5rem;
+    width: 100%;
+    
+    @include breakpoint-up(medium){
+        gap: 0;
+    }
+
+    &__head{
+        font-weight: 600;
+        @include breakpoint-down(medium){
+            display: none;
+        }
+    }
+    
+    &__row, &__head{
+        
+        background-color: $white;
+        padding: .3rem;
+        border-radius: .652rem;
+        width: 100%;
+
+        &__column{
+            padding: .2rem 1rem;
+        }
+
+        &__infos{
+            width: 100%;
+            display: grid;
+
+            @include breakpoint-down(medium){
+                padding: .5rem;
+                gap: .1rem;
+                grid-template-columns: .5fr 1fr .2fr;
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-areas: "date mod del"
+                                     "type doc del";
+            }
+
+            @include breakpoint-up(medium){
+                grid-template-columns: .7fr .5fr 1fr 1.5fr .3fr;
+            }
+        }
+
+        @include breakpoint-up(medium){
+            border-radius: 0;
+            border-bottom: .065rem solid $lightgray;
+        }
+       
+        @include breakpoint-down(medium){
+
+            box-shadow: 0 3px 6px $lightgray;
+            
+            &__column{
+                font-size: .9rem;
+                padding: .2rem .5rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            &__column:first-child{
+                grid-area: date;
+            }
+            &__column:nth-child(2){
+                grid-area: type;
+            }
+            &__column:nth-child(3){
+                grid-area: mod;
+            }
+            &__column:nth-child(4){
+                grid-area: doc;
+            }
+            &__column:nth-child(5){
+                grid-area: del;
+            }
+        }
+    }
+}

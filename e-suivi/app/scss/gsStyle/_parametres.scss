@@ -1,0 +1,376 @@
+.content-param{
+
+    height: 90vh;
+
+    &__head{
+        display: flex;
+        
+        &__btns::-webkit-scrollbar, &__btns::-webkit-scrollbar{
+            display: none;
+        }
+
+        &__btns{
+            width: 100%;
+            max-width: 100%;
+            overflow: scroll;
+        }
+
+        &__btn{
+            padding: .3rem .7rem;
+            color: $darkGray;
+            background-color: $white;
+            border: .07rem solid $darkGray;
+            border-radius: 1.25rem;
+            margin: .2rem 0rem;
+
+            @include breakpoint-down(medium){
+                font-size: .8rem;
+                padding: .3rem .5rem;
+            }
+        }
+
+        &__btn:not(:last-child){
+            margin-right: .3rem;
+        }
+
+        .active, &__btn:hover{
+            cursor: pointer;
+            color: $white;
+            background-color: transparentize($darkBlue, .33);
+            animation: fade-in 300ms ease-in-out forwards;
+        }
+
+        @include breakpoint-down(medium){
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}
+
+.controls-param{
+    background-color: $white;
+    padding: .7rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    border-radius: .625rem;
+    height: fit-content;
+    margin: 1rem 0rem;
+    font-size: 1rem;
+    font-weight: 400;
+
+    @include breakpoint-down(medium){
+        //flex-direction: column;
+    }
+
+    div:first-child{
+        width: 40%;
+        @include breakpoint-down(medium){
+            width: 30%;
+            align-items: flex-start;
+        }
+    }
+
+    /* div:last-child{
+        @include breakpoint-down(medium){
+            margin-top: .5rem;
+        }
+    } */
+
+    &__title{
+        margin-left: 1rem;
+    }
+
+    &__btns{
+        &__btn{
+            color: $white;
+            padding: .5rem 1rem .5rem 2rem;
+            border: 0;
+            border-radius: 1.25rem;
+            background-repeat: no-repeat;
+            background-position: .6rem;
+            background-size: .9rem;
+
+            @include breakpoint-down(medium){
+                font-size: .8rem;
+                padding: .3rem .5rem .3rem 1.5rem;
+            }
+        }
+
+        &__btn:hover{
+            cursor: pointer;
+        }
+
+        &__btn:not(:last-child){
+            margin-right: .3rem;
+        }
+
+        :first-child{
+            background-color: $green;
+            background-image: url(../img/assets/plus-white-icon.svg);
+        }
+
+        :last-child{
+            background-color: $red;
+            background-image: url(../img/assets/minus-white-icon.svg);
+        }
+    }
+}
+
+.param-delete{
+    display: none;
+    width: 2rem;
+    background-image: url(../img/assets/minus-red-icon.svg);
+    //background-position: 1rem .5rem;
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    
+    animation: wiggle 300ms infinite;
+}
+
+.param-delete:hover{
+    cursor: pointer;
+    background-image: url(../img/assets/minus-fillred-icon.svg);
+
+    animation: wiggle 250ms infinite;
+}
+
+
+.delete-message-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 20Vh;
+    width: 35%;
+    padding: 1.5rem;
+    transform: translate(-50%, -50%);
+    background-color: $white;
+    border-radius: .625rem;
+    
+    &__title{
+        margin-bottom: 2.5rem;
+    }
+    
+    &__btn{
+        width: 45%;
+        padding: .3rem 1rem;
+        color: $darkGray;
+        border: 0;
+        border-radius: .4rem;
+        color: $white;
+    }
+    
+    &__btn:hover{
+        cursor: pointer;
+    }
+    
+    &__btn:first-child{
+        background-color: transparentize($red, .25);
+    }
+    
+    &__btn:last-child{
+        background-color: transparentize($darkBlue, .33);
+    }
+
+    @include breakpoint-down(medium){
+        width: 90%;
+    }
+}
+
+.add-message-box{
+
+    background-color: $white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    min-width: 20rem;
+    padding: 1rem;
+    border: 0.065rem solid transparentize($darkGray, .5);
+    border-radius: .5rem;
+    font-size: .8rem;
+
+    &__title{
+        font-size: .9rem;
+        margin-bottom: 1rem;
+    }
+    
+    &__photobtn:hover, &__formbtn:hover{
+        cursor: pointer;
+        background-color: transparentize($darkBlue, .33);
+    }
+
+    &__formbtn{
+        min-width: fit-content;
+        font-size: .9rem;
+        //padding: .1rem 1rem;
+        margin: .5rem;
+        border: .06rem solid $darkGray;
+        border-radius: .5rem;
+        color: $white;
+        background-color: transparentize($darkBlue, .33);
+    }
+
+    &__formbtn:nth-child(1){
+        width: 50%;
+    }
+    
+    &__formbtn:nth-child(2){
+        width: 25%;
+    }
+
+    &__form{
+
+        &__row{
+
+            position: relative;
+
+            &__input, &__label{
+                margin: .5rem;
+            }
+
+            &__input::placeholder{
+                color: transparentize($darkGray, .5);
+            }
+
+            &__input{
+                border: .06rem solid $darkGray;
+                border-radius: .5rem;
+                padding: .2rem .4rem;
+                color: $darkGray;
+                background-color: $lighterGray;
+                width: 50%;
+                min-width: 8rem;
+                font-style: italic;
+            }
+
+            &__input:focus {
+                outline: none !important;
+                border: 1px solid $green;
+                border-radius: 0.625rem;
+                box-shadow: 0 1px 2px 1px $lighterGray;
+            }
+        }
+
+    }
+
+    @include breakpoint-down(medium){
+        width: 90%;
+    }
+}
+
+#formatTableBody tr,
+#stgTableBody tr,
+#groupeTableBody tr{
+    cursor: pointer;
+}
+
+.tabset > input[type="radio"] {
+    position: absolute;
+    left: -200vw;
+}
+
+
+.tabset .tab-panel {
+    display: none;
+}
+  
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2) {
+    display: block;
+}
+
+.tabset {
+    background-color: $white;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    min-width: 20rem;
+    height: 31vh;
+    border: 0rem solid $white;
+    border-radius: .5rem;
+    font-size: .8rem;
+}
+
+.tabset > label {
+    position: relative;
+    display: inline-block;
+    width: 49.4%;
+    padding: .5rem;
+    text-align: center;
+    border: 1px solid transparent;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    border-bottom: 0;
+    cursor: pointer;
+    font-size: .9;
+    background-color: $lighterGray;
+    box-shadow: 0 0px 4px 1px rgba(0, 0, 0, 0.16);
+}
+
+.tabset > input:checked + label {
+    border-color: #ccc;
+    border-bottom: 1px solid #fff;
+    margin-bottom: -1px;
+
+    background-color: $white;
+    box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0.16);
+}
+
+.tab-panel {
+    padding: .5rem .2rem;
+
+    &__grid{
+        display: grid;
+        grid-template-columns: 1fr .5fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1rem;
+        grid-template-areas: "label1 export label11" "label2 import label22";
+        height: 20vh;
+        width: 100%;
+        padding: 1.5rem;
+        align-items: center;
+
+        &__label1{
+            grid-area: label1;
+        }
+
+        &__label2{
+            grid-area: label2;
+        }
+        
+        &__label11{
+            grid-area: label11;
+        }
+
+        &__label22{
+            grid-area: label22;
+        }
+
+        &__export{
+            grid-area: export;
+            background-image: url(../img/assets/export-icon.svg);
+        }
+
+        &__import{
+            grid-area: import;
+            background-image: url(../img/assets/import-icon.svg);
+        }
+
+        &__import:hover, &__export:hover{
+            cursor: pointer;
+        }
+
+        &__import, &__export{
+            width: 2rem;
+            height:2rem;
+            background-color: $fadedDarkBlue;
+            border-radius: .5rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 1.2rem 1.2rem;
+        }
+    }
+}
+  

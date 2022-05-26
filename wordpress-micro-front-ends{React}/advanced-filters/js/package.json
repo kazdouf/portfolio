@@ -1,0 +1,17 @@
+{
+  "name": "metaxonomyv1.3",
+  "version": "1.0.0",
+  "description": "=== Plugin Name === Plugin Name:       MeTaxonomy Description:       Example plugin to exercise on plugin creation and structure for my work. plugin URI:        https://profiles.wordpress.org/ayoubkz Contributors:      (list of wordpress.org usernames) Author:            Ayoub Kazdouf Author URI:        https://example.com/author Author link:       https://example.com/donate Tags:              example, boilerplate, exercise Version:           1.0 Stable tag:        1.0 Requires at least: 4.5 Tested up to:      4.8 Text Domain:       MeTaxonomy Domain Path:       /lang License:           GPL v3 or later License URI:       https://www.gnu.org/licenses/gpl-3.0.html",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^21.0.1"
+  }
+}

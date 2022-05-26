@@ -1,0 +1,143 @@
+.content {
+    
+    &__table {
+        display: grid;
+        width: 100%;
+        //gap: 1rem;
+
+        &__etdhead{
+            background-color: transparent;
+            margin: 1rem 0rem;
+
+            &__infos{
+                font-size: 1rem;
+                font-weight: 400;
+            }
+
+            @include breakpoint-down(medium){
+                display: none;
+            }
+        }
+
+        &__etdrow {
+            cursor: pointer;
+            background-color: $white;
+            &__infos{
+                @include breakpoint-down(medium){
+                    :last-child::before{
+                        content: "Heures d\'absences";
+                        font-size: .7rem;
+                    }
+                }
+            }
+        }
+
+        &__etdnoterow{
+            &__infos{
+                @include breakpoint-down(medium){
+                    :last-child::before{
+                        content: "Note";
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        &__etdrow, &__etdnoterow, &__etdhead {
+            
+            padding: .5rem;
+            border-radius: .652rem;
+            width: 100%;
+
+            &__infos{
+                width: 100%;
+                display: grid;
+                
+                @include breakpoint-down(medium){
+                    padding: .5rem;
+                    grid-template-columns: 2fr 1fr;
+                    grid-template-rows: 1.8fr 1fr 1fr;
+                    grid-template-areas: "infos abs"
+                                         "infos abs"
+                                         "infos abs";
+                    
+            
+                    :nth-child(5), :nth-child(3), :nth-child(4){
+                        font-size: .9rem;
+                        color: $lightgray;
+                        font-style: italic;
+                    }
+    
+    
+                    :nth-child(2){
+                        order: 1;
+                        font-size: 1.3rem;
+                        font-weight: 400;
+                    }
+    
+                    :nth-child(3){
+                        order: 2;
+                    }
+
+                    :nth-child(4){
+                        order: 3;
+                    }
+
+                    :nth-child(5){
+                        display: none;
+                    }
+
+                    :nth-child(3)::before{
+                        content: "Groupe : ";
+                    }
+
+                    :nth-child(4)::before{
+                        content: "Tel : ";
+                    }
+
+                    :last-child{
+                        grid-area: abs;
+                        color: $white;
+                        background-color: $darkBlue;
+                        border-radius: 1.25rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        font-weight: 600;
+                        font-size: 1.5rem;
+                    }
+
+                    :last-child::before{
+                        font-weight: 400;
+                        line-height: 1.5rem;
+                    }
+
+                }
+
+                @include breakpoint-up(medium){
+                    grid-template-columns: repeat(3, 1fr) repeat(2, .5fr);
+                }
+
+            }
+
+            @include breakpoint-down(medium){
+                line-height: 1;
+                margin: .3rem 0rem;
+                box-shadow: 2px 2px 8px 2px $lightgray;
+            }
+        }
+
+            
+        @include breakpoint-up(medium){
+
+            .content__table__etdrow:nth-child(odd){
+                background-color: transparentize($white, .5)
+            }
+        }
+    }
+
+    @include breakpoint-down(medium){
+        padding: 1rem 1rem;
+    }
+}

@@ -1,0 +1,194 @@
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/scss/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap);
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/scss/style.scss (1) ***!
+  \************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+:root {
+  --bg-color: #fff;
+  --card-bg: #f1f1f1;
+  --txt-color: #1e1d2b;
+  --head-color: #222222;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#wdmp_products-box-designer_root {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  padding: 0.2rem 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  margin: 1rem;
+}
+#wdmp_products-box-designer_root .product-box-designer {
+  display: flex;
+  gap: 2rem;
+  margin-inline: 1.5rem 1rem;
+}
+#wdmp_products-box-designer_root .product-box-designer label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-block: 20px 5px;
+  color: var(--txt-color);
+}
+#wdmp_products-box-designer_root .product-box-designer input[type=text], #wdmp_products-box-designer_root .product-box-designer select {
+  width: 15rem;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: var(--card-bg);
+}
+#wdmp_products-box-designer_root .product-box-designer__right-col, #wdmp_products-box-designer_root .product-box-designer__left-col {
+  width: 100%;
+}
+#wdmp_products-box-designer_root .wd-box-designer__title {
+  margin-inline: 1.5rem;
+}
+#wdmp_products-box-designer_root .wd-box-designer__card-field {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.3rem;
+  padding: 0.5rem;
+  background-color: var(--card-bg);
+  border-radius: 0.5rem;
+}
+#wdmp_products-box-designer_root .wd-box-designer__card-field::before {
+  content: "☷";
+  cursor: pointer;
+  font-size: 1.5rem;
+  vertical-align: middle;
+  margin: 0 1rem 0 0.2rem;
+}
+#wdmp_products-box-designer_root .wd-box-designer__btn-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#wdmp_products-box-designer_root .wd-box-designer__btn-div__button {
+  cursor: pointer;
+  padding: 8px 10px;
+  color: var(--bg-color);
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgb(58, 40, 127) 0%, rgb(114, 37, 157) 35%, rgb(189, 33, 196) 100%);
+}
+#wdmp_products-box-designer_root .wd-box-designer__remove {
+  cursor: pointer;
+  vertical-align: middle;
+  float: right;
+}
+
+.product_item_thumbnail {
+  width: 100%;
+}
+.product_item_thumbnail img {
+  width: 400px;
+  height: 400px;
+  border-radius: 6px 6px 0 0;
+}
+
+.product-box-cava {
+  background-color: #fff;
+  padding: 5rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.product-box-preview {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f4f5fc;
+  max-width: 403px;
+  padding: 1px;
+  margin: 0 auto;
+}
+.product-box-preview__author {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.product-box-preview__avatar {
+  width: 7rem !important;
+  height: 7rem !important;
+  margin: 1rem 0;
+  box-sizing: border-box;
+  border: 4px solid #fff;
+  border-radius: 50% !important;
+}
+.product-box-preview__display-name {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+}
+.product-box-preview__email {
+  font-size: 1rem;
+  display: block;
+}
+
+.product_item_details__meta {
+  margin-bottom: 0.2rem;
+}
+
+.wd-product__content {
+  width: 100%;
+  padding: 15px;
+}
+.wd-product__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wd-box-designer__add-form {
+  display: none;
+  border: 1px solid #2271b1;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem 0.3rem;
+}
+.wd-box-designer__add-form__custom-format__label {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0.5rem 0 !important;
+}
+.wd-box-designer__add-form__custom-format__text input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  width: 50% !important;
+  background-color: transparent;
+  outline: none;
+}
+.wd-box-designer__add-form__custom-format__text__hint {
+  margin: 0.2rem 0 0.5rem 0.5rem;
+}
+.wd-box-designer__add-form select {
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  padding-inline: 1rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

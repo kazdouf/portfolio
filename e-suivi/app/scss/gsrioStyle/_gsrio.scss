@@ -1,0 +1,219 @@
+.gsrio-header{
+
+    position: fixed;
+    overflow: hidden;
+    height: 10vh;
+    width: 100%;
+    
+    background-color: $lighterGray;
+    box-shadow: 0px 0px 6px 3px $lightgray;
+    z-index: 2;
+    align-items: center;
+
+    &__logo{
+        background-image: url(../img/assets/logo.svg);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 2rem 2rem;
+        color: $darkBlue;
+        font-size: .8rem;
+        height: 2rem;
+        padding-left: 2.5rem;
+        margin: 0rem 1rem;
+        cursor: pointer;
+    }
+
+    nav{
+        height: 100%;
+        background-color: #ebebeb;
+
+
+        .gsrio-nav-link{
+            width: fit-content;
+            margin-right: 1.5rem;
+            img {
+                align-self: flex-start;
+                margin: .2rem .5rem 0rem .2rem;
+
+                @include breakpoint-down(medium){
+                    display: none;
+                }
+            }
+        }
+        
+        @include breakpoint-down(medium){
+            background-color: $darkBlue;
+        }
+    }
+}
+
+.gsrio-nav-link{
+    margin: 0rem 0.2rem;
+    background-color: $white;
+    padding: .3rem .1rem;
+    border: 1px solid $lightgray;
+    border-radius: .9375rem;
+    width: 3.1rem;
+    height: 6vh;
+    cursor: pointer;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__user {
+
+        width: fit-content;
+        
+        &__name::-webkit-scrollbar, &__titre::-webkit-scrollbar{
+            display: none;
+        }
+
+        &__name, &__titre{
+            width: 6rem;
+            overflow-x: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            
+            @include breakpoint-down(medium){
+                display: none;
+            }
+        }
+
+        &__name{
+            color: $darkGray;
+            font-size: .8rem;
+        }
+    
+        &__titre{
+            color: $lightgray;
+            font-size: .7rem;
+            font-style: italic;
+        }
+    }
+    
+    &__img{
+        background-image: url(../img/personnelProfiles/defaultProfile.png);
+        border-radius: 50%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 1.7rem;
+        height: 1.7rem;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0rem .5rem 0rem .2rem;
+    }
+
+    @include breakpoint-down(medium){
+        background-color: $darkBlue;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.gsrio-content{
+    position: absolute;
+    top: 10vh;
+    width: 100%;
+    height: 90vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 1rem 2rem;
+    color: $darkGray;
+    font-size: 0.9rem;
+
+    .filters__search{
+        position: relative;
+        width: 35%;
+        margin: 1rem auto;
+        input{
+
+            background-color: $white;
+        }
+    }
+}
+
+.gsrio-container{
+
+    width: 100%;
+    
+    &__ville{
+    
+        margin: 0rem 1rem;
+
+        &__title:hover{
+            cursor: pointer;
+        }
+
+        &__title.arrow{
+            background-image: url(../img/assets/arrow-front.svg);
+        }
+
+        &__title::after {
+            position: relative;
+            left: .7rem;
+            width: 95%;
+            height: 1px;
+            content: '\a0';
+            background-color: $lightgray;
+        }
+
+        &__title{
+            background-image: url(../img/assets/arrow-down.svg);
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: .7rem .7rem;
+            font-size: 1rem;
+            margin: 1rem .5rem;
+            padding-left: 1.2rem;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fill, 10rem);
+
+        &__efp:hover{
+            box-shadow: 0px 0px 6px 3px $lightgray;
+            cursor: pointer;
+        }
+
+        &__efp{
+            height: 4rem;
+            border-radius: .5rem;
+            background-color: $white;
+            box-shadow: 0px 0px 4px 1px $lightgray;
+
+            &__img{
+                height: 80%;
+                margin-left: .5rem;
+            }
+
+            &__infos{
+                position: relative;
+                margin-left: .5rem;
+                max-width: 45%;
+                
+                &__code{
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            &__plus{
+                font-size: .7rem;
+                width: fit-content;
+                margin-top: .5rem;
+
+                &__img{
+                    width: 1.2rem;
+                }
+            }
+
+        }
+    }
+}

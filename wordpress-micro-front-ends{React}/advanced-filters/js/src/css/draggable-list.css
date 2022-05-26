@@ -1,0 +1,80 @@
+ul,
+li {
+    list-style-type: none;
+}
+
+.metaxonomy__field__list.group {
+    width: 95%;
+    margin-inline: auto;
+}
+
+.metaxonomy__draggable-list__item {
+    border-top: 1px solid transparent;
+    margin-bottom: .5rem;
+}
+
+.metaxonomy__draggable-list__item.dragstart {
+    opacity: 0.5;
+}
+
+.metaxonomy__draggable-list__item.dragover {
+    border-top-color: #2992c2;
+    cursor: pointer;
+}
+
+/***           form aria         ***/
+.metaxonomy__container{
+    margin-top: 1rem;
+    display: none;
+}
+
+.new-field-container{
+    display: block;
+}
+
+.metaxonomy__container.open {
+    display: block;
+}
+.metaxonomy__container input[type=checkbox]{
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    transform: scale(1.5);
+    padding: .7rem;
+}
+
+.metaxonomy__field.group {
+    grid-column-end: 3;
+    grid-column-start: 1;
+}
+
+.metaxonomy__fields, .metaxonomy__options{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: .5rem;
+}
+
+.metaxonomy__pt__fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    grid-template-areas: 'name key' 'content content';
+    margin-bottom: 1rem;
+}
+
+.metaxonomy__name-field{ grid-area: name;}
+.metaxonomy__key-field{ grid-area: key;}
+.metaxonomy__content-field{ grid-area: content;}
+
+.metaxonomy__field__label, .metaxonomy__options__lable{
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.metaxonomy__checkboxtext{
+    font-size: 110%;
+    display: inline;
+    margin-left: 10px;
+}

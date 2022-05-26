@@ -1,0 +1,309 @@
+.filters, .datasection{
+
+    background-color: $white;
+    padding: 1rem 2rem;
+    box-shadow: 0 3px 6px $lightgray;
+    border-radius: .625rem;
+    height: fit-content;
+    margin: 1rem 0rem;
+    font-size: .98rem;
+    font-weight: 400;
+
+    &__primary{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+
+        @include breakpoint-up(medium){
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint-up(large){
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__etd{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+
+        @include breakpoint-up(medium){
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__seancebtn{
+        margin: 1.5rem 1rem;
+        padding-left: 1.5rem;
+        width: fit-content;
+        font-size: 1rem;
+        font-weight: 500;
+        background-image: url(../img/assets/plus-icon.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: .9rem .9rem;
+        cursor: pointer;
+
+        @include breakpoint-down(small){
+            font-size: .8rem;
+        }
+    }
+
+    &__ajseance{
+
+        display: grid;
+        gap: 1rem;
+
+        @include breakpoint-up(medium){
+            grid-template-areas: "filtr filtr"
+                                 "filtr filtr"
+                                 ". btn";
+        }
+
+        @include breakpoint-up(large){
+            grid-template-areas: "filtr filtr filtr"
+                                 ". . btn";
+        }
+
+        @include breakpoint-down(small){
+            grid-template-areas: "filtr"
+                                 "filtr"
+                                 "filtr"
+                                 "btn";
+        }
+    }
+
+    &__datatable{
+
+        width: 100%;
+        max-width: 100%;
+        border-collapse: collapse;
+        line-height: 1.5rem;
+        table-layout: fixed;
+        
+
+        &__head{
+            text-align: left;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        &__long{
+            width: 80%;
+        }
+
+        &__medium{
+            width: 40%;
+        }
+
+        &__short{
+            width: 20%;
+        }
+
+        &__tiny{
+            width: 5%;
+        }
+
+
+        tr { 
+            border-top: solid;
+            border-width: .5px 0;
+            border-color: transparentize($lightgray, .25);
+
+            td{
+                height: 2.2rem;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+
+        thead{
+            border: solid;
+            border-width: .5px 0;
+            border-color: transparentize($lightgray, .25);
+            border-top: none;
+        }
+
+        tr:first-child {
+            border-top: none;
+        }
+    }
+
+    &__labels{
+        margin-bottom: .5rem;
+    }
+}
+
+.datasection{
+    
+    @include breakpoint-down(medium){
+        background-color: transparent;
+        box-shadow: 0 0 0 transparent;
+        padding: 0;
+    }
+}
+
+
+.entry::placeholder{
+    color: transparentize($darkGray, .5);
+}
+
+.entry{
+    width: 100%;
+    height: 2rem;
+    padding: 0rem .4rem;
+    border-radius: 0.625rem;
+    border: 1px solid $lightgray;
+    color: $darkGray;
+    background-color: $lighterGray;
+    font-style: italic;
+}
+
+.entry:focus {
+    outline: none !important;
+    border: 1px solid $green;
+    border-radius: 0.625rem;
+    box-shadow: 0 1px 2px 1px $lighterGray;
+}
+
+.entry[type=button]{
+    display: block;
+    width: 8rem;
+    margin: 1rem 0rem 0rem auto;
+    border-radius: .625rem;
+    border: 1px solid #2d3368;
+    cursor: pointer;
+    color: $white;
+    background-color: rgba(45, 51, 104, 0.67);
+    grid-area: btn;
+    
+    @include breakpoint-down(small){
+        width: 6rem;
+        height: 1.5rem;
+    }
+}
+
+#suivant1{
+    margin: 1rem 0rem;
+}
+
+.entry-blocks{
+    font-size: .9rem;
+    border-color: $lightgray;
+    width: 100%;
+
+    #search{
+        font-style: italic;
+        padding-left: 2.5rem;
+        background-image: url(../img/assets/search-icon.svg);
+        background-position: .5rem .4rem;
+        background-repeat: no-repeat;
+        background-size: 1.2rem 1.2rem;
+    }
+}
+
+.labels{
+    margin: 0.5rem 0rem;
+}
+
+.plus{
+    visibility: hidden;
+    height: 0;
+}
+
+.slideup, .slidedown {
+    max-height: 0;            
+    overflow-y: hidden;
+    -webkit-transition: max-height 0.5s ease-in-out;
+    -moz-transition: max-height 0.5s ease-in-out;
+    -o-transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.slidedown {            
+    max-height: 18rem;                    
+} 
+
+.grpList{
+
+    display: grid;
+    gap: .5rem;
+    width: 100%;
+
+    &__head{
+
+        font-weight: 600;
+        @include breakpoint-down(medium){
+            display: none;
+        }
+    }
+
+    &__row, &__head{
+        
+        background-color: $white;
+        padding: .3rem;
+        border-radius: .652rem;
+        width: 100%;
+
+        &__column{
+            padding: .2rem 1rem;
+
+            label {
+                display: inline-block;
+                font-size: .9rem;
+                margin-left: 1rem;
+            }
+        }
+
+        &__infos{
+            width: 100%;
+            display: grid;
+
+            @include breakpoint-down(medium){
+                padding: .5rem;
+                gap: .2rem;
+                grid-template-columns: 2fr 1fr;
+                grid-template-rows: 1fr .5fr;
+                grid-template-areas: "fullname abs"
+                                     "cef abs";
+            }
+
+            @include breakpoint-up(medium){
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @include breakpoint-up(medium){
+            border-radius: 0;
+            border-bottom: .065rem solid $lightgray;
+        }
+
+       
+        @include breakpoint-down(medium){
+
+            box-shadow: 0 3px 6px $lightgray;
+            &__column:first-child{
+                font-size: .9rem;
+                color: $lightgray;
+                grid-area: cef;
+            }
+
+            &__column:nth-child(2){
+                font-size: 1.2rem;
+                font-weight: 400;
+                grid-area: fullname;
+            }
+
+            &__column:nth-child(3){
+                font-style: italic;
+                grid-area: abs;
+            }
+        }
+    }
+
+    @include breakpoint-up(medium){
+        gap: 0;
+    }
+}

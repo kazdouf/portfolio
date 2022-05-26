@@ -1,0 +1,44 @@
+.wd-box-designer {
+
+  &__add-form {
+    display: none;
+    border: 1px solid #2271b1;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    margin: .3rem .3rem;
+
+    &__custom-format {
+
+      &__label {
+        width: fit-content;
+        margin: .5rem 0 !important;
+      }
+
+      &__check-box {
+      }
+
+      &__text {
+
+        input {
+          appearance: none;
+          border: none;
+          width: 50% !important;
+          background-color: transparent;
+          outline: none;
+        }
+
+        &__hint {
+          margin: .2rem 0 .5rem .5rem;
+        }
+      }
+    }
+
+    select {
+      border: none;
+      font-size: 1rem;
+      font-weight: 400;
+      padding-inline: 1rem .5rem;
+      border-radius: .5rem;
+    }
+  }
+}

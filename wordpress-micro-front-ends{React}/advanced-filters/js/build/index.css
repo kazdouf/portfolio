@@ -1,0 +1,242 @@
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/css/app.css ***!
+  \***********************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap);
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** css ../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/css/app.css (1) ***!
+  \***************************************************************************************************************************************************************************************/
+:root {
+    --bg-color: #fff;
+    --card-bg: #f1f1f1; /* rgba(241,241,241,255) */
+    --txt-color: #1e1d2b;
+    --head-color: #222222;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#wdmp_search_filters_root {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    padding: .2rem 1.5rem;
+    background-color: var(--bg-color);
+    color: var(--txt-color);
+}
+
+.MT_header {
+    margin: 0 0 10px 0;
+}
+
+.metaxonomy__container input[type=text],
+.metaxonomy__container select,
+#metaxonomyFieldType,
+.metaxonomy__content__input textarea{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 08px;
+    background-color: var(--card-bg);   /*rgba(241,241,241,255) */
+}
+
+#metaxonomyFieldType {
+    margin: .7rem 0;
+}
+
+.metaxonomy__addnew-button{
+    border: solid 1px var(--card-bg);
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 1rem;
+}
+
+.metaxonomy__addnew-button, .metaxonomy__savechanges-button{
+    display: flex;
+    justify-content: center;
+}
+
+.metaxonomy__savechanges-button input[value=Add] {
+    margin-bottom: .2rem;
+}
+
+#wdmp_search_filters_root input[type=button],
+#wdmp_search_filters_root input[type=submit] {
+    padding: 8px 10px;
+    color: var(--bg-color);
+    border: none;
+    border-radius: 10px;
+    background: rgb(58,40,127);
+    background: linear-gradient(90deg, rgba(58,40,127,1) 0%, rgba(114,37,157,1) 35%, rgba(189,33,196,1) 100%);
+}
+
+#wdmp_search_filters_root input[type=button]:hover,
+#wdmp_search_filters_root input[type=submit]:hover {
+    cursor: pointer;
+}
+
+.metaxonomy__savechanges-button input{
+    padding: 8px 15px;
+}
+
+/*!************************************************************************************************************************************************************************************!*\
+  !*** css ../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/css/card.css ***!
+  \************************************************************************************************************************************************************************************/
+/***          card styles         ***/
+.metaxonomy__card {
+    display: -ms-grid;
+    display: grid;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-bottom: .5rem;
+    padding: 0; 
+    box-shadow: 0px 10px 20px 0px var(--card-bg);
+}
+
+.metaxonomy__card.open {
+    padding: .6rem;
+}
+
+.metaxonomy__card__head{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: .5rem;
+    border-radius: 10px;
+    background-color: var(--card-bg);
+    transition: background-color .3s ease;
+}
+
+.metaxonomy__card__head.open{
+    background-color: var(--head-color) !important;
+}
+
+.metaxonomy__card__head:hover {
+    cursor: pointer;
+}
+
+.dashicons-arrow-right-alt2 {
+    color: var(--head-color);
+    margin: 0 5px;
+}
+
+.dashicons-arrow-down-alt2 {
+    color: var(--card-bg);
+}
+
+.metaxonomy__card__type {
+    margin: 0 20px 0 10px;
+    color: var(--bg-color);
+    background-color: black;
+    
+    border-radius: 1rem;
+    padding: 7px 10px;
+    transition: background-color .3s ease;
+}
+.metaxonomy__card__type.open {
+    color: var(--head-color);
+    background-color: var(--bg-color);
+}
+
+
+.metaxonomy__card__name {
+    visibility: visible;
+    margin-right: .7rem;
+}
+.metaxonomy__card__name.open {
+    visibility: hidden;
+}
+
+.metaxonomy__card__remove{
+    margin-left: auto;
+}
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** css ../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/css/draggable-list.css ***!
+  \**********************************************************************************************************************************************************************************************/
+ul,
+li {
+    list-style-type: none;
+}
+
+.metaxonomy__field__list.group {
+    width: 95%;
+    margin-inline: auto;
+}
+
+.metaxonomy__draggable-list__item {
+    border-top: 1px solid transparent;
+    margin-bottom: .5rem;
+}
+
+.metaxonomy__draggable-list__item.dragstart {
+    opacity: 0.5;
+}
+
+.metaxonomy__draggable-list__item.dragover {
+    border-top-color: #2992c2;
+    cursor: pointer;
+}
+
+/***           form aria         ***/
+.metaxonomy__container{
+    margin-top: 1rem;
+    display: none;
+}
+
+.new-field-container{
+    display: block;
+}
+
+.metaxonomy__container.open {
+    display: block;
+}
+.metaxonomy__container input[type=checkbox]{ /* IE */ /* FF */ /* Safari and Chrome */ /* Opera */
+    transform: scale(1.5);
+    padding: .7rem;
+}
+
+.metaxonomy__field.group {
+    -ms-grid-column-span: 2;
+    grid-column-end: 3;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+}
+
+.metaxonomy__fields, .metaxonomy__options{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: .5rem;
+}
+
+.metaxonomy__pt__fields {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1rem 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    -ms-grid-rows: auto 1rem auto;
+        grid-template-areas: 'name key' 'content content';
+    margin-bottom: 1rem;
+}
+
+.metaxonomy__name-field{ -ms-grid-row: 1; -ms-grid-column: 1; grid-area: name;}
+.metaxonomy__key-field{ -ms-grid-row: 1; -ms-grid-column: 3; grid-area: key;}
+.metaxonomy__content-field{ -ms-grid-row: 3; -ms-grid-column: 1; -ms-grid-column-span: 3; grid-area: content;}
+
+.metaxonomy__field__label, .metaxonomy__options__lable{
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.metaxonomy__checkboxtext{
+    font-size: 110%;
+    display: inline;
+    margin-left: 10px;
+}
+
+/*# sourceMappingURL=index.css.map*/

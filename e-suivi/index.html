@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-suivi</title>
+    <link rel="icon" href="./img/assets/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="dist/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <script src="app/script/lib/jquery.js"></script>
+</head>
+<body>
+    <main class="login flex">
+
+        <div class="login__left"></div>
+
+        <div class="flex flex-dc flex-jc-c flex-ai-c login__right">
+            <div class="login__logo"></div>
+            <h2 class="login__title1">Gestion Des Absences</h2>
+            <h2 class="login__title2">Se Connecter</h2>
+            <label class="login__user login__mat-label">
+                <input class="login__input" type="text" id="matricule" placeholder="Matricule">
+            </label>
+            <label class="login__user login__pass-label">
+                <input class="login__input" type="password" id="motdepass" placeholder="Mot De Passe">
+            </label>
+            <div id="err" class="login__err"></div>
+            <div class="login__button" id="submit"></div>
+            <div class="login__captcha" id="html_element"></div>
+        </div>
+
+    </main>
+    
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    <script type="text/javascript" src="app/script/identification.js"></script>
+</body>
+</html>
