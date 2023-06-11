@@ -1,4 +1,4 @@
-# Portfolio Repository - School Presence and Discipline Notes Organizer
+# Portfolio Repository
 
 Welcome to my portfolio repository! This repository showcases a web application that helps organize the presence and discipline notes for multiple schools within a region or state. The project is built using Core PHP, JavaScript, jQuery, Ajax, HTML, and CSS.
 
@@ -34,8 +34,9 @@ To set up the project locally, follow these steps:
 
 1. Clone this repository to your local machine using the following command:
 
+```
 git clone https://github.com/kazdouf/portfolio.git
-
+```
 
 2. Configure a web server (e.g., Apache) with PHP support and make sure it's running.
 
